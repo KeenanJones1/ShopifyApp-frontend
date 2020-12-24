@@ -68,7 +68,7 @@ class signup extends React.Component{
      headers: {'Content-Type': 'application/json'},
      body: JSON.stringify({user: this.state.user})
     }
-    fetch('http://localhost:3000/users', postObj)
+    fetch('http://localhost:3000/user', postObj)
     .then(resp => resp.json())
     .then(data => {
      if (data.errors){

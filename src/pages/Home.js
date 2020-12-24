@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 
+
 export default class Home extends Component {
  constructor(){
   super()
-  this.state = {}
+  this.state = {
+   username: "",
+   images: []
+  }
  }
  componentDidMount(){
   let token = localStorage.getItem('token')
@@ -14,13 +18,20 @@ export default class Home extends Component {
   
  fetch("http://localhost:3000/myuser", reqObj)
  .then(resp => resp.json())
- .then(data => console.log(data))
+ .then(data => this.setState({
+  username: data.username,
+  images: data.images
+ }))
  }
 
  render() {
+  console.log(this.state);
   return (
    <div>
-    Home
+    <h3>{this.state.username}</h3>
+    <h3>Upload Images</h3>
+    <h3>Your Images</h3>
+    <h3>Search Images</h3>
    </div>
   )
  }
