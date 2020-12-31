@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { DirectUpload } from 'activestorage'
 import Images from '../components/images'
+import LogoutBtn from "../components/logoutBtn";
 
 export default class Home extends Component {
  constructor(){
@@ -98,6 +99,8 @@ export default class Home extends Component {
    <div className="container">
      <Images images={this.state.images}/>
    </div>
+
+   <LogoutBtn routerProps={this.props}/>
   </div>
   )
  }
