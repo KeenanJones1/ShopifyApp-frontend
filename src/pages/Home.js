@@ -11,7 +11,8 @@ export default class Home extends Component {
    images: [],
    selectedFile: null,
    imageKeywords: [],
-   imageName: ""
+   imageName: "",
+   desc: ""
   }
  }
  componentDidMount(){
