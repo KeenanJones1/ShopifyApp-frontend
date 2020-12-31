@@ -9,7 +9,7 @@ export default class Home extends Component {
    username: "",
    images: [],
    selectedFile: null,
-   // imageKeywords: [],
+   imageKeywords: [],
    imageName: ""
   }
  }
@@ -79,8 +79,17 @@ export default class Home extends Component {
        <input type="file" onChange={(e) => this.setSelectedFile(e)}/>
       </div>
       <div className="form-group">
-       <label htmlFor="" className="input-label mr-3">name of image</label>
+       <label htmlFor="" className="input-label mr-3">image name</label>
        <input type="text" name="imageName" id="" onChange={(event) => this.setName(event)}/>
+      </div>
+      <div className="form-group">
+       <label htmlFor="" className="input-label mr-3">description</label>
+       <textarea type="textarea" name="imageDescription" id="" onChange={(event) => this.setName(event)}/>
+      </div>
+      <div className="form-group">
+       <label htmlFor="" className="input-label mr-3">keywords</label>
+       <input type="text" name="imageKeywords" id="" onChange={(event) => this.setName(event)}/>
+       <button className="btn btn-primary">add keywords</button>
       </div>
       <button className="btn-primary" onClick={(event) => this.sendFile(event)}>Upload</button>
      </form>

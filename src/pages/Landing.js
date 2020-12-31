@@ -26,7 +26,6 @@ export default class Landing extends Component {
    <div>
     <ImageSearch setImages={this.setImages}/>
     <Images images={this.state.images}/>
-
    </div>
   )
  }
