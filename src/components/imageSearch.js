@@ -5,19 +5,28 @@ class imageSearch extends Component {
   super()
   this.state={
   title: "",
-  keyword: ""
+  query: ""
   }
  }
 
 
   handleInputChange = (e) => {
    this.setState({
-    keyword: e.target.value
+    query: e.target.value
    })
  }
 
  handleSubmit = (e) => {
   e.preventDefault()
+  let reqObj = {
+    method: 'GET',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({search: this.state.query})
+  }
+
+  fetch(`http://localhost:3000/search/${this.state.query}`)
+  .then(resp => resp.json())
+  .then(data => console.log(data))
  }
 
  render() {
@@ -26,7 +35,7 @@ class imageSearch extends Component {
     <div className="col">
      <form action="">
       <div className="form-group">
-       <label htmlFor="">Search for an image by name or keyword</label>
+       <label htmlFor="">Search for an image by keywords</label>
        <input type="text" onChange={(event) => this.handleInputChange(event)}/>
       </div>
       <button type="submit" className="btn btn-primary" onClick={(event) => this.handleSubmit(event)}>Submit</button>
