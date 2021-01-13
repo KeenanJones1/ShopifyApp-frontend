@@ -5,7 +5,12 @@ import Landing from './pages/Landing'
 import Signup from './pages/Signup'
 
 class App extends React.Component{
-
+  constructor(){
+    super()
+    this.state = {
+      cart: []
+    }
+  }
 
   render(){
     return (

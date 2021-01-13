@@ -11,11 +11,6 @@ export default class Landing extends Component {
   }
  }
 
- // componentDidMount(){
- //  fetch("http://localhost:3000/images")
- //  .then(resp => resp.json())
- //  .then(data => console.log(data))
- // }
 
  setImages = (images) => {
   this.setState({images: images})
