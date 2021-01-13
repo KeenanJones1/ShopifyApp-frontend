@@ -26,7 +26,7 @@ class imageSearch extends Component {
 
   fetch(`http://localhost:3000/search/${this.state.query}`)
   .then(resp => resp.json())
-  .then(data => console.log(data))
+  .then(data => this.props.setImages(data))
  }
 
  render() {
